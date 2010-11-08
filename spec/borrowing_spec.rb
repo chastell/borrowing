@@ -24,4 +24,12 @@ describe Borrowing do
 
   end
 
+  context '#errors' do
+
+    it 'finds misspelled words in sentences' do
+      @en_GB.errors('a sentence wtih smoe errors').should == ['wtih', 'smoe']
+    end
+
+  end
+
 end

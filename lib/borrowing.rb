@@ -17,4 +17,8 @@ class Borrowing
     self.class.get('/dicts').parsed_response
   end
 
+  def errors text
+    self.class.get("/dicts/#{@dict}/errors", :query => { :text => text })
+  end
+
 end
