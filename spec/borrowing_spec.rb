@@ -41,4 +41,12 @@ describe Borrowing do
 
   end
 
+  context '#suggest' do
+
+    it 'suggests alternative spellings for a given word' do
+      @en_GB.suggest('rewolutionary').should == ['revolutionary', 'evolutionary', 'reflationary', "revolutionary's"]
+    end
+
+  end
+
 end

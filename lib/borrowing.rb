@@ -16,7 +16,7 @@ class Borrowing
   def method_missing(method, *args, &block)
     case method
     when :autocorrect, :check then fetch(method, args.first)
-    when :errors              then fetch(method, args.first, false)
+    when :errors, :suggest    then fetch(method, args.first, false)
     else super
     end
   end

@@ -16,6 +16,7 @@ usage
     checker.check 'color'                        #=> false
     checker.errors 'a dubiosly colored fox'      #=> ['dubiosly', 'colored']
     checker.autocorrect 'a dubiosly colored fox' #=> 'a dubiously coloured fox'
+    checker.suggest 'rewolutionary'              #=> ['revolutionary', 'evolutionary', 'reflationary', "revolutionary's"]
 
 ---
 
