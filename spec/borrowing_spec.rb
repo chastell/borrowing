@@ -7,6 +7,15 @@ describe Borrowing do
     @en_US = Borrowing.new('localhost:9292', 'en_US')
   end
 
+  context '#autocorrect' do
+
+    it 'autocorrects a sentence’s spelling' do
+      @en_GB.autocorrect('sanitised aluminum').should == 'sanitised aluminium'
+      @en_US.autocorrect('sanitised aluminum').should == 'sanitized aluminum'
+    end
+
+  end
+
   context '#check' do
 
     it 'checks a sentence’s spelling' do

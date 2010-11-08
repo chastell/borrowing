@@ -9,6 +9,10 @@ class Borrowing
     @dict = dict
   end
 
+  def autocorrect text
+    self.class.get("/dicts/#{@dict}/autocorrect", :query => { :text => text }).first
+  end
+
   def check text
     self.class.get("/dicts/#{@dict}/check", :query => { :text => text }).first
   end
