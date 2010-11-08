@@ -10,11 +10,11 @@ class Borrowing
   end
 
   def autocorrect text
-    self.class.get("/dicts/#{@dict}/autocorrect", :query => { :text => text }).first
+    fetch('autocorrect', text)
   end
 
   def check text
-    self.class.get("/dicts/#{@dict}/check", :query => { :text => text }).first
+    fetch('check', text)
   end
 
   def dicts
@@ -22,7 +22,14 @@ class Borrowing
   end
 
   def errors text
-    self.class.get("/dicts/#{@dict}/errors", :query => { :text => text })
+    fetch('errors', text, false)
+  end
+
+  private
+
+  def fetch(call, text, unwrap = true)
+    result = self.class.get("/dicts/#{@dict}/#{call}", :query => { :text => text }).parsed_response
+    unwrap ? result.first : result
   end
 
 end
