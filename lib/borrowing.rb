@@ -24,7 +24,8 @@ class Borrowing
   private
 
   def fetch(call, text, unwrap = true)
-    result = self.class.get("/dicts/#{@dict}/#{call}", :query => { :text => text }).parsed_response
+    params = { :query => { :text => text } }
+    result = self.class.get("/dicts/#{@dict}/#{call}", params).parsed_response
     unwrap ? result.first : result
   end
 
