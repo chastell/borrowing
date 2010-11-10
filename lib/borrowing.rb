@@ -9,16 +9,24 @@ class Borrowing
     @dict = dict
   end
 
+  def autocorrect(text)
+    fetch('autocorrect', text)
+  end
+
+  def check(text)
+    fetch('check', text)
+  end
+
   def dicts
     self.class.get('/dicts').parsed_response
   end
 
-  def method_missing(method, *args, &block)
-    case method
-    when :autocorrect, :check then fetch(method, args.first)
-    when :errors, :suggest    then fetch(method, args.first, false)
-    else super
-    end
+  def errors(text)
+    fetch('errors', text, false)
+  end
+
+  def suggest(text)
+    fetch('suggest', text, false)
   end
 
   private
