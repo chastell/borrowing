@@ -1,7 +1,7 @@
 Borrowing
 =========
 
-Borrowing¹ is a library which exposes the functionality of [Wizzard](https://github.com/chastell/s3-e1/tree/master/server), a spell-checking and -correcting server.
+Borrowing¹ is a library which exposes the functionality of [Wizzard](https://github.com/chastell/s3-e1/tree/master/server), a spell-checking and -correcting server. Borrowing was written for the [s3-e1 exercise](https://github.com/rmu/s3-e1) of [Ruby Mendicant University](http://university.rubymendicant.com).
 
 ¹ [obviously](http://en.wikipedia.org/wiki/Granny_Weatherwax#Powers)
 
