@@ -3,8 +3,8 @@
 describe Borrowing do
 
   before :all do
-    @en_GB = Borrowing.new('localhost:9292', 'en_GB')
-    @en_US = Borrowing.new('localhost:9292', 'en_US')
+    @en_GB = Borrowing.new 'localhost:9292', 'en_GB'
+    @en_US = Borrowing.new 'localhost:9292', 'en_US'
   end
 
   context '#autocorrect' do
