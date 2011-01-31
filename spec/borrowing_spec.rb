@@ -7,7 +7,7 @@ describe Borrowing do
     @en_US = Borrowing.new 'localhost:9292', 'en_US'
   end
 
-  context '#autocorrect' do
+  describe '#autocorrect' do
 
     it 'autocorrects a sentence’s spelling' do
       @en_GB.autocorrect('sanitised aluminum').should == 'sanitised aluminium'
@@ -16,7 +16,7 @@ describe Borrowing do
 
   end
 
-  context '#check' do
+  describe '#check' do
 
     it 'checks a sentence’s spelling' do
       @en_GB.check('colour of magic').should be_true
@@ -25,7 +25,7 @@ describe Borrowing do
 
   end
 
-  context '#dicts' do
+  describe '#dicts' do
 
     it 'returns the available dictionaries' do
       @en_GB.dicts.should == ['en', 'en_CA', 'en_GB', 'en_US']
@@ -33,7 +33,7 @@ describe Borrowing do
 
   end
 
-  context '#errors' do
+  describe '#errors' do
 
     it 'finds misspelled words in sentences' do
       @en_GB.errors('a sentence wtih smoe errors').should == ['wtih', 'smoe']
@@ -41,7 +41,7 @@ describe Borrowing do
 
   end
 
-  context '#suggest' do
+  describe '#suggest' do
 
     it 'suggests alternative spellings for a given word' do
       @en_GB.suggest('rewolutionary').should == ['revolutionary', 'evolutionary', 'reflationary', "revolutionary's"]
